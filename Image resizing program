@@ -1,0 +1,15 @@
+from PIL import Image
+
+def resize_image(input_image_path, output_image_path, new_width, new_height):
+    image = Image.open(input_image_path)
+    resized_image = image.resize((new_width, new_height))
+    resized_image.save(output_image_path)
+
+if __name__ == "__main__":
+    input_path = "input_image.jpg"  # Provide the path to the input image file
+    output_path = "output_image.jpg"  # Provide the desired path for the output resized image file
+    width = int(input("Enter the new width: "))
+    height = int(input("Enter the new height: "))
+    
+    resize_image(input_path, output_path, width, height)
+    print("Image resized successfully!")
